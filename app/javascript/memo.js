@@ -18,7 +18,7 @@ function post (){
     e.preventDefault();
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
-    XHR.open("POST", "/posts", true);  //「posts」→「post」にする
+    XHR.open("POST", "/posts", true);
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
@@ -28,7 +28,7 @@ function post (){
       };
       const list = document.getElementById("list");
       const formText = document.getElementById("content");     
-      list.insertAdjacentHTML("afterend", buildhtml(XHR));
+      list.insertAdjacentHTML("afterend", buildHTML(XHR));
       formText.value = "";
     };
   });
